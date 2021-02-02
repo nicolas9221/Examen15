@@ -1,5 +1,6 @@
 package com.examen.voEx.men;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Curso {
@@ -13,6 +14,8 @@ public class Curso {
         this.nombre = nombre;
         this.horasRequeridas = horasRequeridas;
         this.modalidad = modalidad;
+        this.alumnos = new ArrayList<>();
+        this.notas = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -25,5 +28,10 @@ public class Curso {
 
     public void addAlumno( Alumno alumno ){
         this.alumnos.add(alumno);
+    }
+    public boolean esDeModalidada(String modalidad){
+        if(this.modalidad.equalsIgnoreCase(modalidad))
+            return true;
+        return false;
     }
 }

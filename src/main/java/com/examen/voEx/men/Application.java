@@ -7,7 +7,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+
+		Curso curso = new Curso("Corte y Confeccion",20,"Precencial");
+		Alumno alumno = new Alumno("Roberto","Gomez Bolanio",289612,2020);
+		curso.addAlumno(alumno);
+
+
 	}
+
+
+
+
 
 }
