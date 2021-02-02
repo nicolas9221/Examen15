@@ -1,5 +1,7 @@
 package com.examen.voEx.men;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Alumno extends Persona{
@@ -9,6 +11,7 @@ public class Alumno extends Persona{
     public Alumno(String nombre, String apellido, int legajo, int anioIngreso) {
         super(nombre, apellido, legajo);
         this.anioIngreso = anioIngreso;
+        this.cursadas = new ArrayList<>();
     }
 
     public int getAnioIngreso() {
@@ -20,7 +23,7 @@ public class Alumno extends Persona{
     }
 
     public float obtenerPromedioHoras(String modalidada){
-        iterator<Curso>itCursos = this.cursadas.iterator();
+        Iterator<Curso> itCursos = this.cursadas.iterator();
         float totalHorasDeCursadas = 0;
         int cursosAsistidos = 0;
         while (itCursos.hasNext()){
@@ -31,5 +34,15 @@ public class Alumno extends Persona{
             }
         }
         return totalHorasDeCursadas/cursosAsistidos;
+    }
+
+    @Override
+    public String toString() {
+        return "Alumno{" +
+                "Nombre = "+ getNombre()+
+                "Apellido =" + getApellido()+
+                "anioIngreso=" + anioIngreso +
+                ", cursadas=" + cursadas +
+                '}';
     }
 }

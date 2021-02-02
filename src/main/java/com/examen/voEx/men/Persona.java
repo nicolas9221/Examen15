@@ -34,4 +34,8 @@ public class Persona {
     public void setLegajo(int legajo) {
         this.legajo = legajo;
     }
+    @Override
+    public String toString() {
+        return this.nombre+" "+ this.apellido+" "+ this.legajo;
+    }
 }
